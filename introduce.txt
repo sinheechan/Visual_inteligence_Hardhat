@@ -11,8 +11,11 @@
 
 결과가 없을 때 예외처리
 
-# python predict_api.py --weights hardhat.py
+# python predict_api.py --weights hardhat.pt --show
 
+base64에서 인코딩 값을 다시 디코딩하여 서버에서 이미지로 보여주는 형태
+
+# 
 
 
 Flask 3.0.0

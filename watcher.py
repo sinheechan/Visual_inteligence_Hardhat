@@ -16,7 +16,7 @@ def delete(path):
     
 class Target:
     watchDir = os.getcwd()
-    watchDir = 'C:\\Users\\leesc\\PycharmProjects\\YOLOv8API\\runs\\detect\\'
+    watchDir = 'C:/sinheechan.github.io-master/Visual_inteligence_Hardhat/runs/detect'
     #watchDir에 감시하려는 디렉토리를 명시한다.
 
     def __init__(self):
@@ -46,7 +46,7 @@ class Handler(FileSystemEventHandler):
     def on_created(self, event): #파일, 디렉터리가 생성되면 실행
         print(event)
         #shutil.rmtree(Target.watchDir, ignore_errors=True, onerror=delete(Target.watchDir))
-        delete('C:\\Users\\leesc\\PycharmProjects\\YOLOv8API\\runs\\detect\\')
+        delete('C://sinheechan.github.io-master//Visual_inteligence_Hardhat//runs')
     '''
     def on_deleted(self, event): #파일, 디렉터리가 삭제되면 실행
         print(event)
