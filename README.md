@@ -1,7 +1,6 @@
 # Visual_inteligence_Hardhat
 
-
-
+< img src="img/hardhat_img.png">
 
 <br /><br /> 
 ## Object
@@ -24,12 +23,3 @@
 ## Result
 
 
-## MD.File 문법
-
-1. 이미지 스크립트
-
-   - < img src= >
-
-2. 줄 바꿈
-
-   - <br /><br />
