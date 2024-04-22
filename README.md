@@ -1,6 +1,6 @@
 # Visual_inteligence_Hardhat
 
-< img src="img/hardhat_img.png">
+< img src=img/hardhat_img.png>
 
 <br /><br /> 
 ## Object
