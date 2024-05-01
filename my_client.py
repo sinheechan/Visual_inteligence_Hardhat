@@ -9,7 +9,7 @@ import send_mod # send_mod.py
 
 params = {
     'save_txt': 'T' }
-url = 'http://127.0.0.1:5000/predicts' # 분석서버 타겟 설정 # predict_api.py가 작동 된 상태에서 구동
+url = 'http://127.0.0.1:5000/predict' # 분석서버 타겟 설정 # predict_api.py가 작동 된 상태에서 구동
 file_path = './temp.jpg' # 임시적으로 프레임 이미지 생성 및 전송
 data = OrderedDict() # dict 객체 생성
 
@@ -19,7 +19,7 @@ while cap.isOpened(): # 입력수단이 열려있다면 프레임단위로 카�
     ret, color_frame = cap.read() # 카메라가 열려있다면 ret 구동
     cv2.imwrite('temp.jpg', color_frame) # 카메라를 읽어서 저장시킨다.
     if ret:
-        time.sleep(2)
+        time.sleep(1)
         with open(file_path, "rb") as f:
             response = requests.post(url, files={"myfile" : f}, data=params, verify=False)
             print(response.content)
@@ -43,7 +43,7 @@ while cap.isOpened(): # 입력수단이 열려있다면 프레임단위로 카�
             continue
         except IndexError as e:
             print("Error: 인덱스가 범위를 벗어났습니다.")
-            continue
+            pass
 
         ### 시각화 전송 로직 시작 ###
         # Json => 시각화 로직
@@ -61,7 +61,7 @@ while cap.isOpened(): # 입력수단이 열려있다면 프레임단위로 카�
             fd.write(temp)
         #print(last_data)
         last_json_data = json.dumps(last_data, indent=2)
-        last_url = 'http://127.0.0.1:5000/predicts/recv' # base64 인코딩 URL 서버로 전송
+        last_url = 'http://127.0.0.1:5000/predict' # base64 인코딩 URL 서버로 전송
         response = requests.post(last_url, data=last_json_data)
         print(response.content)
         ### 시각화 전송 로직 종료 ###
