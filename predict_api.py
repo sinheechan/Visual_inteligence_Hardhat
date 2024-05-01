@@ -1,3 +1,4 @@
+# 분석 서버 역할 (클라이언트의 요청을 받아서 분석을 해주고 리턴)
 from flask import Flask, render_template, Response, request
 import json
 import argparse
