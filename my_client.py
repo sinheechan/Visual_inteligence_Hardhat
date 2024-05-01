@@ -61,7 +61,7 @@ while cap.isOpened(): # 입력수단이 열려있다면 프레임단위로 카�
             fd.write(temp)
         #print(last_data)
         last_json_data = json.dumps(last_data, indent=2)
-        last_url = 'http://127.0.0.1:5000/predict' # base64 인코딩 URL 서버로 전송
+        last_url = 'http://42.29.8.133:12080/kepco/ml_recv' # base64 인코딩 URL 서버로 전송
         response = requests.post(last_url, data=last_json_data)
         print(response.content)
         ### 시각화 전송 로직 종료 ###
